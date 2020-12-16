@@ -119,7 +119,36 @@ $footer = [
                 <?php
                 }
                 ?>
-            </div>        
+            </div>
         </main>
+        <footer>
+            <div class="container">
+                <div class="footer-left">
+                    <?php
+                    for ($i=0; $i <count($footer) ; $i++) {
+                    ?>
+                    <a href="#">
+                        <?php echo  $footer[$i]; ?>
+                        <?php
+                            if($i<(count($footer)-1)){
+
+                                echo  "<span> . </span> ";
+
+                            }
+                         ?>
+                    </a>
+                    <?php
+                    }
+                    ?>
+                </div>
+                <div class="footer-right">
+                    <i class="fas fa-comment-alt"></i>
+                    <select class="lenguages" name="">
+                        <option value="">Italiano</option>
+                        <option value="">English</option>
+                    </select>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
