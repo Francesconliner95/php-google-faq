@@ -1,0 +1,89 @@
+@import 'partials/variables';
+@import 'partials/mixin';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+};
+
+header{
+    width: 100%;
+    padding: 10px 20px 0px 20px;
+    border-bottom: solid 1px $head-color;
+    position: fixed;
+    background-color: white;
+    color: $head-color;
+    .header-cont{
+        display: flex;
+        justify-content: space-between;
+        .header-left{
+            padding: $spacing;
+            display: flex;
+            align-items: center;
+            span{
+                font-size: $font-size-h;
+                padding-left: $spacing;
+            }
+        }
+        .header-right{
+            width: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .menu{
+                width: 20px;
+                display: flex;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            .user{
+                width: 40px;
+                height: 40px;
+                background-color: lightblue;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    nav{
+        a{
+            display: inline-block;
+            padding: $spacing;
+            // border: 1px solid;
+            color: $head-color;
+            text-decoration: none;
+            &:hover{
+                color: $link-color;
+                border-bottom: solid 4px $link-color;
+                // font-weight: bold;
+            }
+        }
+    }
+}
+
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+main{
+    padding-top: 150px;
+    section{
+        padding: $spacing *3 0;
+        h2{
+            font-size: $font-size-h;
+            padding: $spacing *2 0px;
+            color: $head-color;
+        }
+        p{
+            font-size: $font-size-p;
+            line-height: 24px;
+            color: $text-color;
+        }
+    }
+}

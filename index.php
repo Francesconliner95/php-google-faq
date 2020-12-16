@@ -1,5 +1,15 @@
 <?php
 
+//NAV
+$nav = [
+        'Introduzione',
+        'Norme sulla privacy',
+        'Termini di servizio',
+        'Tecnologie',
+        'Domande frequenti',
+    ];
+
+//MAIN
 $faq = [
     [
     'question' =>
@@ -45,6 +55,14 @@ $faq = [
     ],
 ];
 
+//FOOTER
+$footer = [
+        'Google',
+        'Tutto su Google',
+        'Privacy',
+        'Termini',
+    ];
+
 ?>
 
 <!DOCTYPE html>
@@ -52,23 +70,56 @@ $faq = [
     <head>
         <meta charset="utf-8">
         <title></title>
+        <link rel="stylesheet" href="dist/app.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     </head>
     <body>
+        <header>
+            <div class="header-cont">
+                <div class="header-left">
+                    <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="logo">
+                    <span>Privacy e termini</span>
+                </div>
+                <div class="header-right">
+                    <div class="menu">
+                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="user">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <?php
+                for ($i=0; $i <count($nav) ; $i++) {
+                ?>
+                <a href="#">
+                    <?php echo  $nav[$i]; ?>
+                </a>
+                <?php
+                }
+                ?>
+            </nav>
+        </header>
         <main>
-            <?php
-            for ($i=0; $i <count($faq) ; $i++) {
-            ?>
-            <section>
-                <h2>
-                    <?php echo  $faq[$i]['question']; ?>
-                </h2>
-                <p>
-                    <?php echo  $faq[$i]['answer']; ?>
-                </p>
-            </section>
-            <?php
-            }
-            ?>
+            <div class="container">
+                <?php
+                for ($i=0; $i <count($faq) ; $i++) {
+                ?>
+                <section>
+                    <h2>
+                        <?php echo  $faq[$i]['question']; ?>
+                    </h2>
+                    <p>
+                        <?php echo  $faq[$i]['answer']; ?>
+                    </p>
+                </section>
+                <?php
+                }
+                ?>
+            </div>        
         </main>
     </body>
 </html>
