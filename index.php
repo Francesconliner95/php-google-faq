@@ -63,7 +63,20 @@ $footer = [
         'Termini',
     ];
 
+$link_words = [
+     'decisione della Corte di giustizia dell\'Unione europea',
+      'modulo web',
+      'Centro Google per la sicurezza online',
+      'Scopri',
+      'contattare il webmaster',
+      'fai clic qui',
+      'visitare la nostra pagina di assistenza per avere ulteriori informazioni',
+      'URL referrer'
+];
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -113,7 +126,19 @@ $footer = [
                         <?php echo  $faq[$i]['question']; ?>
                     </h2>
                     <p>
-                        <?php echo  $faq[$i]['answer']; ?>
+                        <?php
+                        // echo  $faq[$i]['answer'];
+                        ?>
+                        <?php
+                        for ($j=0; $j <count($link_words) ; $j++) {
+                            $faq[$i]['answer']=str_replace($link_words[$j], '<a href="#">'.$link_words[$j].'</a>', $faq[$i]['answer']);
+                        }
+                        echo $faq[$i]['answer'];
+                        ?>
+                        /*Ho provato a creare un array contente parole chiave,
+                        in modo dinamico se all'interno del paragrafo ne viene riconosciuta gli viene aggiunto il tag a.
+                        L'unica pecca è che può essere ripetuta più volte nel paragrafo una parola chiave e gli verrebbe assegnato il tag a anche quando non necessario.
+                        Per ovviare al problema bisognerebbe in modo statico aggiungere manualmete nel paragrafo dell'array il tag a dove necessario*/
                     </p>
                 </section>
                 <?php
